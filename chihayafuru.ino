@@ -179,7 +179,7 @@ void check_serial() {
 }
 
 void loop() {
-  check_serial();
+//check_serial();
   check_sensor();
   delay(200);
 }
@@ -191,7 +191,7 @@ bool isBusy() {
     while (Wire.available()) {
       char b = Wire.read();
       // コマンド実行中は Busy 状態になり、この間に他のコマンドを受信すると、コマンド応答として '*' が返ります。
-      // なお、発生中は Busy 状態となります。
+      // なお、発話中は Busy 状態となります。
       return b == '*';
     }
     delay(100);
